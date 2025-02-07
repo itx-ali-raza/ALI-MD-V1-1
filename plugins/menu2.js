@@ -8,9 +8,12 @@ contact dev2 237650564445 ♻️
 
 
 
-const config = require('../config')
-const {cmd , commands} = require('../command')
-cmd({
+const config = require('../config');
+const { cmd, commands } = require('../command');
+const os = require("os");
+const { runtime } = require('../lib/functions');
+const axios = require('axios');
+
     pattern: "menu2",
     react: "👾",
     desc: "get cmd list",
@@ -118,9 +121,3 @@ ${menu.search}
                 }
             }
         }, { quoted: mek });
-
-    } catch (e) {
-        console.log(e);
-        reply(`${e}`);
-    }
-});
