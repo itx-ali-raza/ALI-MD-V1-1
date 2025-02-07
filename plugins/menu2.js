@@ -105,7 +105,7 @@ ${menu.search}
 
         // Envoyer le message avec image et légende
         await conn.sendMessage(from, {
-            image: { url: ALIVE_IMG }, // Assurez-vous que l'URL est valide
+            image: { url: `https://i.imgur.com/XM8Vadf.jpeg` }, // Assurez-vous que l'URL est valide
             caption: formattedInfo,
             contextInfo: { 
                 mentionedJid: [m.sender],
