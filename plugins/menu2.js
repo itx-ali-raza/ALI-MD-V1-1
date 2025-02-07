@@ -102,24 +102,22 @@ ${menu.search}
 ╰━❁ ═══ ❃•⇆•❃ ═══ ❁━╯
 `
 
-await conn.sendMessage(
-            from,
-            {
-                image: { url: `https://i.imgur.com/XM8Vadf.jpeg` },
-                caption: dec,
-                contextInfo: {
-                    mentionedJid: [m.sender],
-                    forwardingScore: 999,
-                    isForwarded: true,
-                    forwardedNewsletterMessageInfo: {
-                        newsletterJid: '120363369260614615@newsletter',
-                        newsletterName: 'AWAIS MD',
-                        serverMessageId: 143
-                    }
+
+        // Envoyer le message avec image et légende
+        await conn.sendMessage(from, {
+            image: { url: ALIVE_IMG }, // Assurez-vous que l'URL est valide
+            caption: formattedInfo,
+            contextInfo: { 
+                mentionedJid: [m.sender],
+                forwardingScore: 999,
+                isForwarded: true,
+                forwardedNewsletterMessageInfo: {
+                    newsletterJid: '120363321336877609@newsletter',
+                    newsletterName: '𓆩ု᪳𝐋𝚵𝐆𝚵𝚴𝐃 𝐀𝐋𝐈ှ᪳𓆪',
+                    serverMessageId: 143
                 }
-            },
-            { quoted: mek }
-        );
+            }
+        }, { quoted: mek });
 
     } catch (e) {
         console.log(e);
