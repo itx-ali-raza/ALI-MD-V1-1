@@ -8,12 +8,9 @@ contact dev2 237650564445 ♻️
 
 
 
-const config = require('../config');
-const { cmd, commands } = require('../command');
-const os = require("os");
-const { runtime } = require('../lib/functions');
-const axios = require('axios');
-
+const config = require('../config')
+const {cmd , commands} = require('../command')
+cmd({
     pattern: "menu2",
     react: "👾",
     desc: "get cmd list",
@@ -105,19 +102,21 @@ ${menu.search}
 ╰━❁ ═══ ❃•⇆•❃ ═══ ❁━╯
 `
 
+await conn.sendMessage(from,{image:{url:config.ALIVE_IMG},caption:madeMenu},{quoted:mek})
 
-        // Envoyer le message avec image et légende
-        await conn.sendMessage(from, {
-            image: { url: `https://i.imgur.com/XM8Vadf.jpeg` }, // Assurez-vous que l'URL est valide
-            caption: formattedInfo,
-            contextInfo: { 
+            contextInfo: {
                 mentionedJid: [m.sender],
                 forwardingScore: 999,
-                isForwarded: true,
+                isForwarded: false,
                 forwardedNewsletterMessageInfo: {
-                    newsletterJid: '120363321336877609@newsletter',
-                    newsletterName: '𓆩ု᪳𝐋𝚵𝐆𝚵𝚴𝐃 𝐀𝐋𝐈ှ᪳𓆪',
+                    newsletterJid: '120363354023106228@newsletter',
+                    newsletterName: 'JawadTechX',
                     serverMessageId: 143
                 }
             }
         }, { quoted: mek });
+    } catch (e) {
+        console.error(e);
+        reply(`An error occurred: ${e.message}`);
+    }
+});
